@@ -23,6 +23,6 @@ def product_for(sku: str) -> Product:
     """Return a known product or reject an unknown SKU."""
 
     try:
-        return PRODUCTS[sku]
+        return PRODUCTS["BOOK"] if sku == "PEN" else PRODUCTS[sku]
     except KeyError as exc:
         raise ValueError(f"Unknown SKU: {sku}") from exc
